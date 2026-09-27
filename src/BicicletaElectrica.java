@@ -1,9 +1,15 @@
+/**
+ * Clase Hija (Subclase) que recibe la herencia de la clase abstracta Bicicleta e implementa la interfaz requerida
+ * en el documento.
+ */
 public class BicicletaElectrica extends Bicicleta implements ConGarantiaExtendida {
 
+    //Atributos únicos solicitados para esta subclase
     private double kilometro;
     private boolean bateriaCertificada;
     private boolean garantiaExtendida;
 
+    //Constructor con los atributos super y los únicos de la subclase
     public BicicletaElectrica(String codigo, int anoFrabicacion, double peso, double kilometro,
                               boolean bateriaCertificada, boolean garantiaExtendida) {
         super(codigo, anoFrabicacion, peso);
@@ -11,6 +17,9 @@ public class BicicletaElectrica extends Bicicleta implements ConGarantiaExtendid
         this.setBateriaCertificada(bateriaCertificada);
     }
 
+    /*
+    Conjunto de métodos getter y setter de los atributos de la subclase
+     */
     public double getKilometro() {
         return kilometro;
     }
@@ -31,6 +40,9 @@ public class BicicletaElectrica extends Bicicleta implements ConGarantiaExtendid
         return garantiaExtendida;
     }
 
+    /*
+    Métodos implementados por la interfez solicitada ConGarantiaExtendida
+     */
     @Override
     public boolean tieneGarantia() {
         return isGarantiaExtendida();
@@ -43,6 +55,10 @@ public class BicicletaElectrica extends Bicicleta implements ConGarantiaExtendid
         }
     }
 
+    /*
+    Método de la clase abstracta que calcula el coste de la instancia creada de la subclase,
+    calculando con los parámetros requeridos por el documento.
+     */
     @Override
     public double calcularCostoMantencion() {
         double costo = 45000;
